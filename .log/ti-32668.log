@@ -1,0 +1,16 @@
+[20:19:21.447] Global cache location '/Users/fricze/Library/Caches/typescript/4.3', safe file path '/users/fricze/jotai/hacker-news/node_modules/typescript/lib/typingsafelist.json', types map path /users/fricze/jotai/hacker-news/node_modules/typescript/lib/typesmap.json
+[20:19:21.450] Processing cache location '/Users/fricze/Library/Caches/typescript/4.3'
+[20:19:21.450] Trying to find '/Users/fricze/Library/Caches/typescript/4.3/package.json'...
+[20:19:21.451] Finished processing cache location '/Users/fricze/Library/Caches/typescript/4.3'
+[20:19:21.451] Process id: 32669
+[20:19:21.451] NPM location: /usr/local/Cellar/node/18.11.0/bin/npm (explicit '--npmLocation' not  provided)
+[20:19:21.452] validateDefaultNpmLocation: false
+[20:19:21.452] Npm config file: /Users/fricze/Library/Caches/typescript/4.3/package.json
+[20:19:21.453] Updating types-registry npm package...
+[20:19:21.453] Exec: /usr/local/Cellar/node/18.11.0/bin/npm install --ignore-scripts types-registry@latest
+[20:19:21.461]     Failed. stdout:
+    stderr:
+    /bin/sh: /usr/local/Cellar/node/18.11.0/bin/npm: No such file or directory
+    
+[20:19:21.461] Updated types-registry npm package
+[20:19:21.461] Types registry file '/Users/fricze/Library/Caches/typescript/4.3/node_modules/types-registry/index.json' does not exist
