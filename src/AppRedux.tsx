@@ -61,7 +61,7 @@ const postSlice = createSlice({
     name: 'hn-post',
     initialState,
     reducers: {
-        setNextPage(state) {
+        setNextPost(state) {
             state.postId = state.postId + 1;
         }
     },
@@ -100,7 +100,7 @@ function Next() {
 
     return (
         <button onClick={() => {
-            dispatch(actions.setNextPage())
+            dispatch(actions.setNextPost())
         }}>
             <div>→</div>
         </button>
@@ -122,7 +122,7 @@ function PostTitle() {
     }
 
     if (!post) {
-        // won't work
+        // won't work for loading
         /* return <h2>Loading...</h2>; */
         return null;
     }
