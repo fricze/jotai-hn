@@ -34,16 +34,28 @@ const initialState: PostState = {
     loading: 'idle',
 };
 
-
 const fetchPostById = createAsyncThunk(
     'posts/fetchById',
-    async (postId: number) => {
-        const response = await fetch(
-            `https://hacker-news.firebaseio.com/v0/item/${postId}.json`
-        )
-        const data: PostData = await response.json()
-        return data
-    })
+    async (postId: number): Promise<PostData> => await (await fetch(
+        `https://hacker-news.firebaseio.com/v0/item/${postId}.json`
+    )).json())
+
+// const fetchPostById = createAsyncThunk(
+//     'posts/fetchById',
+//     async (postId: number): Promise<PostData> => {
+//         return await (await fetch(
+//             `https://hacker-news.firebaseio.com/v0/item/${postId}.json`
+//         )).json()
+//     })
+
+// const fetchPostById = createAsyncThunk(
+//     'posts/fetchById',
+//     async (postId: number): Promise<PostData> => {
+//         const response = await fetch(
+//             `https://hacker-news.firebaseio.com/v0/item/${postId}.json`
+//         )
+//         return await response.json()
+//     })
 
 const postSlice = createSlice({
     name: 'hn-post',
