@@ -37,11 +37,7 @@ const initialState: PostState = {
 
 const fetchPostById = createAsyncThunk(
     'posts/fetchById',
-    async (_, thunkAPI) => {
-        const state = thunkAPI.getState() as RootState;
-        const { post } = state;
-        const { postId } = post;
-
+    async (postId: number) => {
         const response = await fetch(
             `https://hacker-news.firebaseio.com/v0/item/${postId}.json`
         )
@@ -93,8 +89,6 @@ function Next() {
     return (
         <button onClick={() => {
             dispatch(actions.setNextPage())
-
-            dispatch(fetchPostById())
         }}>
             <div>→</div>
         </button>
@@ -105,10 +99,11 @@ function PostTitle() {
     const dispatch = useDispatch()
     const post = useSelector(state => state.post.post)
     const loading = useSelector(state => state.post.loading)
+    const postId = useSelector(state => state.post.postId)
 
     useEffect(() => {
-        dispatch(fetchPostById())
-    }, [])
+        dispatch(fetchPostById(postId))
+    }, [postId])
 
     if (loading === 'pending') {
         return <h2>Loading...</h2>;

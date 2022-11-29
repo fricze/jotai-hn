@@ -7,8 +7,8 @@ import AppRedux from './AppRedux'
 const rootElement = document.getElementById('root')
 ReactDOM.render(
   <StrictMode>
-      <App/>
-      {/* <AppRedux /> */}
+      {/* <App/> */}
+      <AppRedux />
   </StrictMode>,
   rootElement
 )
